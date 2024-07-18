@@ -96,8 +96,8 @@ def display_alcohol_impacts(filtered_data, selected_year):
         st.pyplot(fig)
 
 
-def display_speed_zones(data, selected_year):
-    if st.button(f"Show data per Speed Zone for {selected_year}"):
+def display_speed_zones(data):
+    if st.button(f"Show data per Speed Zone"):
         # takes out all strings from SPEED_ZONE and leaves only numbers
         data['SPEED_ZONE'] = data['SPEED_ZONE'].str.extract('(\d+)')
         # analyze the data and display the result
@@ -110,7 +110,7 @@ def display_speed_zones(data, selected_year):
         plt.bar(accident_counts['SPEED_ZONE'], accident_counts['Total Accidents'])
         plt.xlabel('Speed Zone Km/h')
         plt.ylabel('Total Accidents')
-        plt.title(f'Total Accidents per Speed Zone for {selected_year}')
+        plt.title(f'Total Accidents per Speed Zone')
         st.pyplot(fig)
 
 read_csv(csv_file)

@@ -37,8 +37,7 @@ def read_csv(csv):
         display_alcohol_impacts(filtered_data, selected_year)
         # make a button for speed zones
         display_speed_zones(data, selected_year)
-    else:
-        'Please upload a csv file'
+    
 
 
 def display_data_for_accident_type(filtered_data, selected_year, accident_type):
@@ -51,7 +50,7 @@ def display_data_for_accident_type(filtered_data, selected_year, accident_type):
             selected_columns = ['OBJECTID', 'ACCIDENT_NO', 'ACCIDENT_TYPE',
                                 'ACCIDENT_DATE', 'ACCIDENT_TIME', 'SEVERITY']
             st.dataframe(filtered_data_type[selected_columns])
-    exit()
+    
 
 
 def display_accidents_per_hour(filtered_data, selected_year):

@@ -101,7 +101,7 @@ def display_speed_zones(data, selected_year):
         # takes out all strings from SPEED_ZONE and leaves only numbers
         data['SPEED_ZONE'] = data['SPEED_ZONE'].str.extract('(\d+)')
         # analyze the data and display the result
-        accident_counts = data['SPEED_ZONE'].value_counts().reset_index()
+        accident_counts = data['SPEED_ZONE', selected_year].value_counts().reset_index()
         accident_counts.columns = ['SPEED_ZONE', 'Total Accidents']
         # display the total accidents per speed zone in a table
         st.write('Total Accidents per Speed Zone:')

@@ -17,6 +17,7 @@ def read_csv(csv):
         data['ACCIDENT_DATE'] = pd.to_datetime(data['ACCIDENT_DATE'], format=date_format)
 
         st.title("Crash Statistics Data Filtering")
+    
 
         # create a dropdown to select the year and accident type input
         selected_year = st.selectbox("Select a Year", list(range(2013, 2019)))
@@ -50,6 +51,7 @@ def display_data_for_accident_type(filtered_data, selected_year, accident_type):
             selected_columns = ['OBJECTID', 'ACCIDENT_NO', 'ACCIDENT_TYPE',
                                 'ACCIDENT_DATE', 'ACCIDENT_TIME', 'SEVERITY']
             st.dataframe(filtered_data_type[selected_columns])
+    exit()
 
 
 def display_accidents_per_hour(filtered_data, selected_year):

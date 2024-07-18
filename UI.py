@@ -22,7 +22,7 @@ def read_csv(csv):
         # create a dropdown to select the year and accident type input
         selected_year = st.selectbox("Select a Year", list(range(2013, 2019)))
         filtered_data = data[data['ACCIDENT_DATE'].dt.year == selected_year].copy()
-        accident_type = st.selectbox("Chose Accident type",("Collision", "Animal", "Pedestrian"))
+        accident_type = st.selectbox("Choose Accident type",("Collision", "Animal", "Pedestrian", "No Collision"))
 
         if st.button(f"Show Data for {selected_year}"):
             selected_columns = ['OBJECTID', 'ACCIDENT_NO', 'ACCIDENT_STATUS',

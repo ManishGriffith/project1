@@ -30,7 +30,7 @@ def read_csv(csv):
             st.dataframe(filtered_data[selected_columns])
 
         # create a separate button to display accident type
-        display_data_for_accident_type(filtered_data)
+        display_data_for_accident_type(filtered_data, selected_year, accident_type)
         # create a button to display accidents per hour
         display_accidents_per_hour(filtered_data, selected_year)
         # create a button for alcohol impacts

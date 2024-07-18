@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 st.title('Accident Analysis App')
 
-csv_file = st.file_uploader('Upload a CSV file containing accident data', type=['csv'])
+csv_file = pd.read_csv("Crash Statistics Victoria.csv")
 
 
 def read_csv(csv):

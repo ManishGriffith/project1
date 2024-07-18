@@ -41,15 +41,12 @@ def read_csv(csv):
 
 
 def display_data_for_accident_type(filtered_data, selected_year, accident_type):
-    if st.button(f"Show Data for Accident type in {selected_year}"):
-        if not accident_type:
-            st.warning("Please enter an accident type.")
-        else:
-            filtered_data_type = filtered_data[filtered_data['ACCIDENT_TYPE'].str.contains(accident_type, case=False)]
-            filtered_data_type['ACCIDENT_DATE'] = filtered_data_type['ACCIDENT_DATE'].dt.date
-            selected_columns = ['OBJECTID', 'ACCIDENT_NO', 'ACCIDENT_TYPE',
-                                'ACCIDENT_DATE', 'ACCIDENT_TIME', 'SEVERITY']
-            st.dataframe(filtered_data_type[selected_columns])
+    accident_type = st.selectbox("Select Accident Type", list("Pedestrian","Collision","Animal")):
+    filtered_data_type = filtered_data[filtered_data['ACCIDENT_TYPE'].str.contains(accident_type, case=False)]
+    filtered_data_type['ACCIDENT_DATE'] = filtered_data_type['ACCIDENT_DATE'].dt.date
+    selected_columns = ['OBJECTID', 'ACCIDENT_NO', 'ACCIDENT_TYPE',
+                        'ACCIDENT_DATE', 'ACCIDENT_TIME', 'SEVERITY']
+    st.dataframe(filtered_data_type[selected_columns])
     
 
 

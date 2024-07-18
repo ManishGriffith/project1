@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 st.title('Accident Analysis App')
 
-csv_file = pd.read_csv("Crash Statistics Victoria.csv")
+csv_file = "Crash Statistics Victoria.csv"
 
 
 def read_csv(csv):

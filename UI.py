@@ -36,7 +36,7 @@ def read_csv(csv):
         # create a button for alcohol impacts
         display_alcohol_impacts(filtered_data, selected_year)
         # make a button for speed zones
-        display_speed_zones(data, selected_year)
+        display_speed_zones(data)
     
 
 
